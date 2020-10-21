@@ -15,6 +15,7 @@ namespace Cars.Data
         }
 
         public DbSet<CarList> CarList { get; set; }
+        public DbSet<PlaneList> PlaneList { get; set; }
 
     }
 }

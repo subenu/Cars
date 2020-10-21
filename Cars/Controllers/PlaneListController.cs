@@ -8,19 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cars.Controllers
 {
-    public class CarListController : Controller
+    public class PlaneListController : Controller
     {
+        private readonly ApplicationDbContext _db;
 
-        private readonly ApplicationDbContext _db; 
-
-        public CarListController(ApplicationDbContext db)
+        public PlaneListController(ApplicationDbContext db)
         {
             _db = db;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<CarList> objlist = _db.CarList; 
+            IEnumerable<PlaneList> objlist = _db.PlaneList;
             return View(objlist);
         }
 
@@ -29,13 +28,13 @@ namespace Cars.Controllers
         {
             return View();
         }
-
+        
+        // POST - CREATE
         [HttpPost]
         [ValidateAntiForgeryToken]
-        // POST - CREATE
-        public IActionResult Create(CarList obj)
+        public IActionResult Create(PlaneList obj)
         {
-            _db.CarList.Add(obj);
+            _db.PlaneList.Add(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

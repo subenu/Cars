@@ -6,17 +6,10 @@ using System.Threading.Tasks;
 
 namespace Cars.Models
 {
-    public class CarList
+    public class PlaneList
     {
         [Key]
         public int Id { get; set; }
-
         public string Name { get; set; }
-        public int Year { get; set; }
-        /*public enum Type
-        {
-            Sedan,
-            Coupe,         
-        }*/
     }
 }
